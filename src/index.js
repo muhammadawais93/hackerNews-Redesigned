@@ -2,11 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { HackerNewsProvider } from './ContextAPI';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <HackerNewsProvider>
+      <Router><App /></Router>
+    </HackerNewsProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
